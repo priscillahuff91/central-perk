@@ -112,15 +112,16 @@ export const UpdateBeverage = ({
     Promise.all(allPromises).then(onClose);
   };
 
+  // Modal where you can add or update a beverage
   return (
-    <Dialog 
+    <Dialog
       aria-labelledby="beverage-modal-title"
       aria-describedby="beverage-modal-description"
       open={isBeverageOpenModal}
       onClose={onClose}
     >
       <Paper className="modal">
-        <DialogTitle id="beverage-form-title">beverage Form</DialogTitle>
+        <DialogTitle id="beverage-form-title">Beverage Form</DialogTitle>
         <DialogContent>
           <FormControl fullWidth={true}>
             <TextField

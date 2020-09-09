@@ -19,6 +19,7 @@ const Schedules = ({
   beverages: Beverage[];
   schedule: Schedule[];
 }) => {
+  // Gets list of employees working on that specific day
   const getEmployees = (userIds: number[]) => {
     const employeesClone = employees.slice(0);
     const employeesPerDay = employeesClone.filter((employee) => {
@@ -41,6 +42,7 @@ const Schedules = ({
     );
   };
 
+  // Finds the beverage OTD for that specific day
   const getBeverage = (beverageId: number) => {
     const beveragePerDay = beverages.find((beverage) => {
       return beverage.id === beverageId;
@@ -67,6 +69,7 @@ const Schedules = ({
                 </Typography>
               )}
               <Typography variant="body1" component={"div"}>
+                { /*employee schedule list*/ }
                 {day.userIds && getEmployees(day.userIds)}
               </Typography>
             </Grid>

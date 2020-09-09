@@ -4,11 +4,15 @@ import {
   List,
   Typography,
   ListItem,
-
+  ListItemSecondaryAction,
+  IconButton,
   ListItemText,
 } from "@material-ui/core";
+// tslint:disable-next-line: no-submodule-imports
+import DeleteIcon from "@material-ui/icons/Delete";
+// tslint:disable-next-line: no-submodule-imports
+import EditIcon from "@material-ui/icons/Edit";
 import { Beverage } from "../types";
-import ListItemSecondaryAction from '../components/ListSecondaryAction';
 
 const Beverages = ({
   beverages,
@@ -42,10 +46,22 @@ const Beverages = ({
                 style={{ paddingRight: "60px" }}
                 primary={beverage.name}
               />
-              <ListItemSecondaryAction
-                removeItem={() => removeBeverage(beverage.id)}
-                openItemModal={() => openBeverageModal(beverage)}
-              />
+              <ListItemSecondaryAction>
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  onClick={() => removeBeverage(beverage.id)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+                <IconButton
+                  edge="end"
+                  aria-label="edit"
+                  onClick={() => openBeverageModal(beverage)}
+                >
+                  <EditIcon />
+                </IconButton>
+              </ListItemSecondaryAction>
             </ListItem>
           );
         })}

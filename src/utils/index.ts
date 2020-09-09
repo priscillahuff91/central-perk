@@ -63,6 +63,7 @@ export const updateEntity = (
 
 export const getCurrentBeverageDay = (schedule: Schedule[]) => {
   let day = "";
+  // gets todays date to set current beverage day
   switch (new Date().getDay()) {
     case 0:
       day = "Sunday";

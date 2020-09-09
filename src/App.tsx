@@ -29,7 +29,7 @@ export default function App() {
         </ul>
         <hr />
         <Switch>
-          <Route exact path="/">
+          <Route exact={true} path="/">
             <Home />
           </Route>
           <Route path="/about">

@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import {
   Dialog,
   TextField,
-  FormControlLabel,
   Select,
   Paper,
   Button,
   MenuItem,
   FormControl,
-  Switch,
   Input,
   DialogTitle,
   DialogActions,
@@ -77,12 +75,6 @@ export const UpdateEmployee = ({
     setEmployeeObj({ ...employeeObj, [name]: value });
   };
 
-  const handleChangeSwitch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = e.currentTarget;
-
-    setEmployeeObj((prevState: any) => ({ ...prevState, [name]: checked }));
-  };
-
   const onAddEmployeeClick = () => {
     const allPromises = [];
     if (employee) {
@@ -92,7 +84,6 @@ export const UpdateEmployee = ({
     }
 
     const newSchedule = schedule.map((s: Schedule) => {
-      // debugger;
       if (userSchedule.indexOf(s.day) !== -1) {
         if (s.userIds.indexOf(employeeObj.id) === -1) {
           s.userIds.push(employeeObj.id);
@@ -122,6 +113,7 @@ export const UpdateEmployee = ({
     setUserSchedule(value);
   };
 
+  // Modal where you can add/update employees
   return (
     <Dialog
       aria-labelledby="simple-modal-title"

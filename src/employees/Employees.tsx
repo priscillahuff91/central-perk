@@ -6,13 +6,13 @@ import {
   ListItem,
   ListItemText,
   Typography,
+  ListItemSecondaryAction
 } from "@material-ui/core";
 // tslint:disable-next-line: no-submodule-imports
 import DeleteIcon from "@material-ui/icons/Delete";
 // tslint:disable-next-line: no-submodule-imports
 import EditIcon from "@material-ui/icons/Edit";
 import { Employee } from "../types";
-import ListItemSecondaryAction from '../components/ListSecondaryAction';
 
 const Employees = ({
   employees,
@@ -46,10 +46,22 @@ const Employees = ({
                 primary={employee.name}
                 secondary={employee.username}
               />
-              <ListItemSecondaryAction
-                removeItem={() => removeEmployee(employee.id)}
-                openItemModal={() => openEmployeeModal(employee)}
-              />
+              <ListItemSecondaryAction>
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  onClick={() => removeEmployee(employee.id)}
+                >
+                  <DeleteIcon />
+                </IconButton>
+                <IconButton
+                  edge="end"
+                  aria-label="edit"
+                  onClick={() => openEmployeeModal(employee)}
+                >
+                  <EditIcon />
+                </IconButton>
+              </ListItemSecondaryAction>
             </ListItem>
           );
         })}
