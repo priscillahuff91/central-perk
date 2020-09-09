@@ -1,0 +1,76 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #110b0b;
+$primary-white: #ffffff;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  margin: 0;
+
+  .heading>* {
+    filter: blur(0);
+  }
+
+  .heading {
+    background-image:url('./../images/cafe.jpg');
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    left: 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      -webkit-backdrop-filter: blur(3px) grayscale(60%) brightness(60%); /* apply the blur */
+      backdrop-filter: blur(3px) grayscale(60%) brightness(60%);         /* apply the blur */
+      pointer-events: none; /* make the pseudo class click-through */
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+
+    .entry-content{
+      z-index: 1;
+      color: $primary-white;
+      position: relative;
+      height: 280px;
+      padding: 0 50px;
+    }
+
+    .content{
+      padding: 30px;
+      background: $primary-white;
+      filter: blur(0);
+      border-top: 10px solid black;
+      position: relative;
+      z-index: 12;
+    }
+
+    .list-wrap{
+      overflow-y: auto;
+      height: 290px;
+    }
+
+  }
+
+  .modal{
+    padding: 10px 20px;
+    min-width: 400px;
+  }
+
+  .hoverGrey {
+    &:hover {
+      cursor: pointer;
+      background-color: #cccccc;
+    }
+  }
+}

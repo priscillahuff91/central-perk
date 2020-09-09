@@ -1,0 +1,2 @@
+(this.webpackJsonpburgershop=this.webpackJsonpburgershop||[]).push([[0],{3:function(e,t,n){e.exports=n(8)},8:function(e,t,n){"use strict";n.r(t);var r=n(0),o=n.n(r),u=n(2),a=function(){return o.a.createElement("div",null,"hi")};n.n(u).a.render(o.a.createElement(o.a.StrictMode,null,o.a.createElement(a,null)),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.2d62e41b.chunk.js.map
